@@ -19,6 +19,7 @@
 
 ## Установка и запуск
 
+```bash
 git clone https://github.com/grizlier/task-tracker-cli.git
 cd task-tracker-cli
 go build -o tracker .
@@ -26,7 +27,7 @@ go build -o tracker .
 ./tracker add "Пример задачи"
 
 ---
-
+```markdown
 ## Структура проекта
 
 task-tracker-cli/
