@@ -25,7 +25,7 @@ cd task-tracker-cli
 go build -o tracker .
 
 ./tracker add "Пример задачи"
-
+```
 ---
 ```markdown
 ## Структура проекта
@@ -38,7 +38,7 @@ task-tracker-cli/
 |- tasks.json # Хранилище задач
 |- go.mod
 |- README.md
-
+```
 ---
 
 ## О проекте
