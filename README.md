@@ -27,9 +27,9 @@ go build -o tracker .
 ./tracker add "Пример задачи"
 ```
 ---
-```markdown
-## Структура проекта
 
+## Структура проекта
+```markdown
 task-tracker-cli/
 |- main.go # Точка входа
 |- tasks.go # Логика задач
