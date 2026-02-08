@@ -38,6 +38,13 @@ func main() {
 	case "sort", "Sort":
 		Sort()
 
+	case "search", "Search":
+		if len(os.Args) < 3 {
+			fmt.Println("Укажите ключевое слово после команды search")
+			return
+		}
+		Search(os.Args[2])
+	
 	default:
 		fmt.Println("Неизвестная команда:", arg)
 	}

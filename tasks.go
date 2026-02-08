@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"time"
+	"strings"
 )
 
 // Task представляет собой задачу в списке дел
@@ -12,6 +13,11 @@ type Task struct {
 	Text      string    `json:"text"`
 	Status    bool      `json:"status"`
 	CreatedAt time.Time `json:"createdAt"`
+}
+
+type Found struct {
+	Id		int
+	Text	string
 }
 
 var tasks []Task
@@ -83,4 +89,27 @@ func Delete(arg string) {
 	tasks = newTasks
 
 	SaveTasks()
+}
+
+func Search(arg string) { 
+	LoadTasks() 
+	var found []Found 
+	
+	for _, t := range tasks { 
+		if strings.Contains(strings.ToLower(t.Text), strings.ToLower(arg)) { 
+			found = append(found, Found{
+				Id: t.ID,
+				Text: t.Text,
+			}) 
+		} 
+	} 
+	
+	if len(found) == 0 { 
+		fmt.Println("Ничего не найдено") 
+	} else { 
+		fmt.Println("По ключевому слову найдено: ") 
+		for _, t := range found { 
+			fmt.Printf("[%d]\t %s\n", t.Id, t.Text) 
+		} 
+	} 
 }
